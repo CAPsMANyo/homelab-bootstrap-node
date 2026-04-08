@@ -17,7 +17,7 @@ services:
       - "traefik.http.routers.hawser.entrypoints=https"
       - "traefik.http.routers.hawser.tls=true"
       - "traefik.http.routers.hawser.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.hawser.rule=Host(`hawser.${DOMAIN}`)"
+      - "traefik.http.routers.hawser.rule=Host(`hawser-${NODE_NAME}.${DOMAIN}`)"
       - "traefik.http.routers.hawser.service=hawser"
 
   traefik-kop:
