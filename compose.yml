@@ -28,9 +28,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - REDIS_ADDR=${REDIS_ADDR}
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
-      - KOP_BIND_IP=${NODE_IP}
-      - KOP_PREFIX=traefik
+      - REDIS_PASS=${REDIS_PASSWORD}
+      - BIND_IP=${NODE_IP}
 
 networks:
   proxy:
