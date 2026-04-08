@@ -21,7 +21,7 @@ services:
       - "traefik.http.routers.hawser.service=hawser"
 
   traefik-kop:
-    image: jittering/traefik-kop:latest
+    image: ghcr.io/jittering/traefik-kop:latest
     container_name: traefik-kop
     restart: unless-stopped
     volumes:
