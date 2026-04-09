@@ -7,14 +7,13 @@ services:
     networks:
       - proxy
     ports:
-      - "${BIND_IP}:2376:2376"
+      - "${NODE_IP}:2376:2376"
     volumes:
       - /data/stacks:/data/stacks
       - /var/run/docker.sock:/var/run/docker.sock
       - /llm:/llm
     labels:
       - "traefik.enable=true"
-      - "traefik.docker.network=proxy"
       - "traefik.http.services.hawser.loadbalancer.server.port=2376"
       - "traefik.http.routers.hawser.entrypoints=https"
       - "traefik.http.routers.hawser.tls=true"
@@ -30,7 +29,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - REDIS_ADDR=${REDIS_ADDR}
-      - BIND_IP=${BIND_IP}
+      - BIND_IP=${NODE_IP}
 
 networks:
   proxy:
